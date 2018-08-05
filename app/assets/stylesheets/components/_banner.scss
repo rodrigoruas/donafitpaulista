@@ -1,0 +1,28 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 600px;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://res.cloudinary.com/dib2nyadi/image/upload/e_grayscale/v1532450402/Nikita/paulette-wooten-223050-unsplash.jpg');
+
+}
+
+.banner-content {
+  text-align: left;
+}
+.banner h1 {
+  font-size: $header-big-size;
+  font-weight: 200;
+  color: #ffffff;
+  text-align: left;
+}
+.banner li {
+  font-size: $font-medium-size;
+  font-weight: lighter;
+  color: #ffffff;
+  text-align: left;
+}
