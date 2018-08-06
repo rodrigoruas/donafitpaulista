@@ -49,3 +49,20 @@
 .carousel {
   height:500px;
 }
+
+
+.banner-donafit {
+  color: white;
+  text-align: center;
+  height: 250px !important;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://res.cloudinary.com/dib2nyadi/image/upload/c_scale,h_300/v1533593894/alyson-mcphee-499812-unsplash_h2tjx7.jpg');
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}

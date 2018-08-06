@@ -1,0 +1,23 @@
+.section-small {
+  height: 300px;
+  background-color: $light-gray;
+}
+
+
+
+.section-medium {
+  height: 400px;
+  background-color: white;
+}
+
+.section-medium h3 {
+  font-size: $header-small-size;
+  font-weight: 200;
+
+}
+
+.section-medium p {
+  font-size: $font-medium-size;
+  font-weight: 200;
+
+}
