@@ -1,28 +1,51 @@
 .banner {
   color: white;
   text-align: center;
-  height: 600px;
+  height: 500px !important;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://res.cloudinary.com/dib2nyadi/image/upload/e_grayscale/v1532450402/Nikita/paulette-wooten-223050-unsplash.jpg');
-
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
+                  url('https://res.cloudinary.com/dib2nyadi/image/upload/v1533590117/dan-gold-298710-unsplash_id9lnv.jpg');
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .banner-content {
-  text-align: left;
+  text-align: center;
 }
 .banner h1 {
   font-size: $header-big-size;
   font-weight: 200;
   color: #ffffff;
-  text-align: left;
+  text-align: center;
 }
+
+.banner h2 {
+  font-size: $header-medium-size;
+  font-weight: 200;
+  color: #ffffff;
+  text-align: center;
+}
+
 .banner li {
   font-size: $font-medium-size;
   font-weight: lighter;
   color: #ffffff;
   text-align: left;
+}
+
+.banner h3 {
+  font-size: $header-small-size;
+  font-weight: 200;
+  color: #ffffff;
+  // text-align: left;
+}
+
+.carousel {
+  height:500px;
 }

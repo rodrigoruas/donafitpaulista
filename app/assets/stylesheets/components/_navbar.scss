@@ -1,13 +1,14 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: $dark-green;
+  background: $light-gray;
   transition: all 0.3s ease;
-  height: 50px;
-  padding: 0px 30px;
+  height: 70px;
+  // padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0px;
 }
 
 /* Logo */
@@ -29,7 +30,9 @@
   justify-content: space-between;
   a {
     font-family: $base-font;
-    color: $light-gray;
+    color: $dark-green;
+    font-size: $navbar-size;
+    line-height: $navbar-height;
   }
 }
 
