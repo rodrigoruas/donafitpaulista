@@ -3,7 +3,6 @@
 }
 
 
-
 .section-medium {
   background-color: white;
 }
@@ -18,4 +17,15 @@
   font-size: $font-medium-size;
   font-weight: 200;
 
+}
+.section-menu {
+  background-color: $light-green;
+}
+
+.menu-section {
+  margin-bottom: 30px;
+}
+
+body {
+background-color: white;
 }
