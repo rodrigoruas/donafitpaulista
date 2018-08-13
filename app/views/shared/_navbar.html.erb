@@ -21,7 +21,11 @@
               </li>
               <% if user_signed_in? %>
                 <li>
-                  <%= "BEM VINDO (A), #{@user.first_name.upcase}" %>
+                  <%= "BEM VINDO (A), #{current_user.first_name.upcase}" %>
+
+                </li>
+                <li>
+                  <%= link_to('LOGOUT', destroy_user_session_path, method: :delete) %>
                 </li>
               <% else %>
                 <li>
