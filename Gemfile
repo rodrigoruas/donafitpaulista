@@ -35,6 +35,7 @@ gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'cloudinary'
 gem 'devise'
+gem 'money-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
