@@ -13,10 +13,17 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <% if controller_name == "pages" && action_name = "index" %>
+      <%= render 'shared/home_navbar' %>
+    <% else  %>
+      <%= render 'shared/navbar' %> %>
+    <% end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <%= yield %>
+
     <%= render 'shared/footer' %>
   </body>
 </html>

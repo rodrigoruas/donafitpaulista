@@ -34,6 +34,13 @@
     font-size: $navbar-size;
     line-height: $navbar-height;
   }
+
+  li {
+    font-family: $base-font;
+    color: $dark-green;
+    font-size: $navbar-size;
+    line-height: $navbar-height;
+  }
 }
 
 // .navbar-item {
