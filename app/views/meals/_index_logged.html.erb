@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <div class="menu-body">
+      <% @meals.each do |meal| %>
+        <div class="menu-item">
+          <div class="menu-item-name">
+            <%= meal.name %>
+          </div>
+          <div class="menu-item-price">
+            <%=  humanized_money_with_symbol(meal.price) %>
+          </div>
+          <div class="menu-item-description">
+            <%= meal.description  %>
+          </div>
+          <div class="menu-item-btn">
+            <%= link_to "Peça Aqui", new_meal_order_path(meal), class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
