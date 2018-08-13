@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  get 'meals/index'
+  get 'orders', to: "orders#index"
 
   devise_for :users
   devise_scope :user do
