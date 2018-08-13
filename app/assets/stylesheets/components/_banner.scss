@@ -72,3 +72,20 @@
     margin: 0 auto;
   }
 }
+
+.banner-devise {
+  // text-align: center;
+  height: 600px !important;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:
+                  url('https://res.cloudinary.com/dib2nyadi/image/upload/c_scale,h_600/v1534181687/lily-banse-365344-unsplash_ckrxyv.jpg');
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+

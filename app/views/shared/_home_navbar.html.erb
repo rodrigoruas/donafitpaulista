@@ -29,8 +29,11 @@
               </li>
               <% if user_signed_in? %>
                 <li>
-                  <%= "BEM VINDO, #{user.name}" %>
+                  <%= "BEM VINDO, #{current_user.first_name.upcase}" %>
                 </li>
+                <li>
+                  <%= link_to('LOGOUT', destroy_user_session_path, method: :delete) %>
+                  </li>
               <% else %>
                 <li>
                   <%= link_to "LOGIN", new_user_session_path, class: "page-scroll navbar-item" %>
