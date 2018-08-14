@@ -14,6 +14,15 @@
             </div>
             <div class="menu-item-price">
               <%=  humanized_money_with_symbol(meal.price) %>
+              <% if meal.available  %>
+                <div class="menu-available">
+                  <p>Disponível</p>
+                </div>
+              <% else %>
+                <div class="menu-not-available">
+                  <p>Não Disponível</p>
+                </div>
+              <% end %>
             </div>
             <div class="menu-item-description">
               <%= meal.description  %>
