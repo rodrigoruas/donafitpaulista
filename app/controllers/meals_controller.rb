@@ -1,8 +1,12 @@
 class MealsController < ApplicationController
   before_action :check_admin, except: :index
   def index
-    @meals = Meal.all
+    @meals = Meal.where(available: true)
     @user = current_user
+  end
+
+  def my_meals
+    @meals = Meal.order(available: :desc)
   end
 
   def new
@@ -42,6 +46,6 @@ class MealsController < ApplicationController
   private
 
   def meal_params
-    params.require(:meal).permit(:name, :description, :price)
+    params.require(:meal).permit(:name, :description, :price, :available)
   end
 end

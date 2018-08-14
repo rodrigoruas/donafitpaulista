@@ -1,11 +1,8 @@
-<% if current_user.admin? %>
-  <%= render 'index_admin' %>
-<% else %>
-  <div class="container margin-top-medium">
-    <% if user_signed_in? == false %>
-        <%= render 'index_not_logged' %>
-     <% else %>
-        <%= render 'index_logged' %>
-    <% end %>
-  </div>
-<% end %>
+<div class="container margin-top-medium">
+  <% if user_signed_in? == false %>
+      <%= render 'index_not_logged' %>
+   <% else %>
+      <%= render 'index_logged' %>
+  <% end %>
+</div>
+
