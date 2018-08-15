@@ -3,6 +3,8 @@ class MealsController < ApplicationController
   def index
     @meals = Meal.where(available: true)
     @user = current_user
+    @orders = Order.where(user: current_user)
+    @cart = Cart.new
   end
 
   def my_meals

@@ -1,13 +1,22 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   def new
+    @meal = Meal.find(params[:meal_id])
     @order = Order.new
+    @payment_methods = ["Cartão de Débito", "Cartão de Crédito", "Dinheiro"]
   end
 
   def create
+    @meal = Meal.find(params[:meal_id])
     @order = Order.new(order_params)
+    @order.user = current_user
+    @order.meal = @meal
+    # @cart = Cart.new
+    # @cart.save
+    # @order.cart = @cart
+
     if @order.save
-      redirect_to order_path(@order)
+      redirect_to meals_path
     else
       render 'new'
     end
@@ -15,6 +24,6 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:meal_id, :user_id)
+    params.require(:order).permit(:meal_id, :user_id, :quantity, :payment_method, :description, :cart_id)
   end
 end
