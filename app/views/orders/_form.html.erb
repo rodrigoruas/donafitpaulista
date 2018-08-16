@@ -1,0 +1,49 @@
+<div class="container">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <div class="form-login">
+        <div class="form-header">
+          <p>FAÇA SEU PEDIDO</p>
+        </div>
+        <%= simple_form_for [@meal, @order] do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <div class="form-row">
+              <div class="col-md-8">
+                  <p><%= @meal.name.upcase %> - <%= @meal.description %></p>
+              </div>
+              <div class="col-md-2">
+                <p>Quantidade:</p>
+              </div>
+              <div class="col-md-2">
+                <%= f.input :quantity, required: true, autofocus: true, label: false, input_html: {min: "1"} %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <%= f.input :description, required: true, autofocus: true, label: false, :input_html => {:rows => 5}, placeholder: "Escreva aqui suas observações. Ex: Carne sem molho, macarrão sem queijo, arroz com pouco sal" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p>Forma de Pagamento:</p>
+              </div>
+              <div class="col-md-4">
+                <%= f.input :payment_method, required: true, autofocus: true, collection: @payment_methods, label: false, placeholder: "Forma de Pagamento" %>
+              </div>
+              <div class="col-md-4">
+                <div class="form-actions">
+                  <%= f.button :submit, "Adicionar", class: "btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
