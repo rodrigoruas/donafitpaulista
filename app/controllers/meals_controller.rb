@@ -11,6 +11,10 @@ class MealsController < ApplicationController
     @meals = Meal.order(available: :desc)
   end
 
+  def my_meals
+    @meals = Meal.order(available: :desc)
+  end
+
   def new
     @meal = Meal.new
   end
