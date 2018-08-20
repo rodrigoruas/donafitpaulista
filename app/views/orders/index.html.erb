@@ -1,0 +1,48 @@
+<div class="container margin-top-medium">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="menu-body">
+        <% @meals.each do |meal| %>
+          <div class="menu-item">
+            <div class="menu-item-name">
+              <%= meal.name %>
+            </div>
+            <div class="menu-item-price">
+              <%=  humanized_money_with_symbol(meal.price) %>
+            </div>
+            <div class="menu-item-description">
+              <%= meal.description  %>
+            </div>
+            <div class="menu-item-btn">
+              <%= link_to "Peça Aqui", new_cart_order_path(meal), class: "btn btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <ul class="list-group">
+        <p>Carrinho de Compras</p>
+        <% if @orders %>
+          <% @orders.each do |order| %>
+            <li class="list-group-item shop-cart">
+              <p><%= order.meal.name  %></p>
+
+              <p><%= order.quantity %></p>
+              <p><%= order.quantity * order.meal.price %></p>
+            </li>
+          <% end %>
+        <% else %>
+          <p>Carrinho Vazio</p>
+        <% end %>
+
+      </ul>
+
+      <div class="menu-item-btn">
+        <%= link_to "Continuar", meals_path, class: "btn btn-primary" %>
+      </div>
+
+    </div>
+  </div>
+
+</div>

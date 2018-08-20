@@ -1,5 +1,11 @@
 class MealsController < ApplicationController
-  before_action :check_admin, except: :index
+  before_action :check_admin, except: [:index, :index_public]
+
+  def index_public
+    #meals inde@x for public. Not logged in
+    @meals = Meal.where(available: true)
+  end
+
   def index
     @meals = Meal.where(available: true)
     @user = current_user
@@ -8,10 +14,7 @@ class MealsController < ApplicationController
   end
 
   def my_meals
-    @meals = Meal.order(available: :desc)
-  end
-
-  def my_meals
+    #meals index for admin
     @meals = Meal.order(available: :desc)
   end
 

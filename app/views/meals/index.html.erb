@@ -1,8 +1,30 @@
-<div class="container margin-top-medium">
-  <% if user_signed_in? == false %>
-      <%= render 'index_not_logged' %>
-   <% else %>
-      <%= render 'index_logged' %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="menu-body">
+        <% @meals.each do |meal| %>
+          <div class="menu-item">
+            <div class="menu-item-name">
+              <%= meal.name %>
+            </div>
+            <div class="menu-item-price">
+              <%=  humanized_money_with_symbol(meal.price) %>
+            </div>
+            <div class="menu-item-description">
+              <%= meal.description  %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="form-login">
+        <%= simple_form_for [@cart] do |f| %>
+          <div class="form-inputs">
+          <%= f.button :submit, "Fazer Pedido", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-

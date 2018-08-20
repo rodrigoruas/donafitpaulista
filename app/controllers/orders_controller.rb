@@ -1,5 +1,10 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+
+  def index
+    @meals = Meal.where(available: true)
+  end
+
   def new
     @meal = Meal.find(params[:meal_id])
     @order = Order.new
