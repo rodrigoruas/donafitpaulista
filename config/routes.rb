@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   end
   root to: "pages#index"
 
-  resources :meals do
-    collection do
-      get 'mymeals', to: "meals#my_meals"
-    end
-  end
   resources :carts do
+    resources :meals do
+      collection do
+        get 'mymeals', to: "meals#my_meals"
+      end
+    end
     resources :orders, only: [:index, :new, :create]
   end
 end
