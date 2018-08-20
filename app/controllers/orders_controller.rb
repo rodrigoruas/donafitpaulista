@@ -1,5 +1,11 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+
+  def index
+    @orders = Order.where(user: current_user)
+    @cart = Cart.new
+  end
+
   def new
     @meal = Meal.find(params[:meal_id])
     @order = Order.new

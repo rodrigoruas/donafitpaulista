@@ -33,13 +33,11 @@
     </ul>
     <div class="form-login">
       <%= simple_form_for [@cart] do |f| %>
-      <div class="form-inputs">
-      <%= f.input :order_id, required: true, autofocus: true, label: false, input_html: {min: "1"} %>
-      </div>
     </div>
 
     <div class="menu-item-btn">
-      <%= link_to "Continuar", meals_path, class: "btn btn-primary" %>
+      <%= f.button :submit, "Adicionar", class: "btn btn-primary" %>
+      <%= link_to "Continuar", orders_path, class: "btn btn-primary" %>
     </div>
     <% end %>
 
