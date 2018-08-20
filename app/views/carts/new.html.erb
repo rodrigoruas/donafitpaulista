@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="menu-body">
+        <h3>Resumo</h3>
+        <%= simple_form_for [@cart] do |f| %>
+          <% @orders.each do |order| %>
+            <%= order.meal.name %>
+            <%= order.quantity %>
+            <%= f.input :order_ids,  input_html: { value: "#{order.id}"} %>
+          <% end %>
+            <%= f.button :submit, "Adicionar", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
