@@ -22,25 +22,20 @@
   <div class="col-md-5">
     <ul class="list-group">
       <p>Carrinho de Compras</p>
-      <% @orders.each do |order| %>
-        <li class="list-group-item shop-cart">
-          <p><%= order.meal.name  %></p>
-
-          <p><%= order.quantity %></p>
-          <p><%= order.quantity * order.meal.price %></p>
-        </li>
+      <%= simple_form_for [@cart] do |f| %>
+        <% @orders.each do |order| %>
+          <li class="list-group-item shop-cart">
+            <p><%= order.meal.name  %></p>
+            <p><%= order.quantity %></p>
+            <p><%= order.quantity * order.meal.price %></p>
+            <%= f.input :order_ids, as: :hidden, input_html: { value: "#{order.id}"} %>
+          </li>
+        <% end %>
+        <div class="menu-item-btn">
+          <%= f.button :submit, "Continuar", class: "btn btn-primary" %>
+        </div>
       <% end %>
     </ul>
-    <div class="form-login">
-      <%= simple_form_for [@cart] do |f| %>
-    </div>
-
-    <div class="menu-item-btn">
-      <%= f.button :submit, "Adicionar", class: "btn btn-primary" %>
-      <%= link_to "Continuar", orders_path, class: "btn btn-primary" %>
-    </div>
-    <% end %>
-
   </div>
 </div>
 
