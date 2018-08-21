@@ -1,5 +1,9 @@
 class CartsController < ApplicationController
 
+  def show
+    @cart = Cart.find(params[:id])
+  end
+
   def new
     @orders = Order.where(user: current_user)
     @cart = Cart.new
