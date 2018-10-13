@@ -1,73 +1,35 @@
-<div class="section-medium">
+<div class="section-medium", id= "menu-section" >
   <div class="container">
-    <div class="row  margin-top-medium">
-      <div class="col-xs-12 col-sm-4">
-        <div class="card">
-          <div class="card-picture">
-            <%= cl_image_tag("Foto1_e12idj.png", :height=>150, :crop=>"scale") %>
-          </div>
-            <div class="card-title">
-              <h3>ISCA DE FRANGO</h3>
-            </div>
-            <div class="card-description">
-              <p>Acompanhamento: Arroz Integral</p>
-              <p>Molho: Madeira</p>
-            </div>
-            <div class="card-price">
-              <p>R$10</p>
-            </div>
-            <div class="card-date">
-              <p>10 a 14 de Agosto</p>
-            </div>
-
-          <a class="card-link" href="#" ></a>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="menu-section-title">
+          <h3>Cardápio da Semana</h3>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card">
-          <div class="card-picture">
-            <%= cl_image_tag("Foto1_e12idj.png", :height=>150, :crop=>"scale") %>
-          </div>
-            <div class="card-title">
-              <h3>ESCONDIDINHO DE BATATA DOCE</h3>
-            </div>
-            <div class="card-description">
-              <p>Acompanhamento: Macarrão</p>
-              <p>Sobremesa extra</p>
-            </div>
-            <div class="card-price">
-              <p>R$10</p>
-            </div>
-            <div class="card-date">
-              <p>10 a 14 de Agosto</p>
-            </div>
+    </div>
+    <div class="row margin-top-medium">
+      <% @meals.each do |meal| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card margin-bottom-big">
+              <div class="card-title">
+                <h3><%= meal.name.capitalize %></h3>
+              </div>
+              <div class="card-description">
+                <p><%= meal.description %></p>
+              </div>
+              <div class="card-price margin-top-small">
+                <p>R$ <%= meal.price %></p>
+              </div>
+              <% if user_signed_in? == false %>
+                  <%= link_to "Faça Seu Pedido", new_user_session_path, class: "btn btn-primary  btn-xlarge card-btn" %>
+               <% else %>
+                  <%= link_to "Faça Seu Pedido", meals_path, class: "btn btn-primary  btn-xlarge card-btn" %>
+              <% end %>
 
-          <a class="card-link" href="#" ></a>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card">
-          <div class="card-picture">
-            <%= cl_image_tag("Foto1_e12idj.png", :height=>150, :crop=>"scale") %>
+            <!-- <a class="card-link" href="#" ></a> -->
           </div>
-            <div class="card-title">
-              <h3>STROGONOFF DE FRANGO</h3>
-            </div>
-            <div class="card-description">
-              <p>Acompanhamento: Arroz Integral</p>
-              <p>Salada Extra</p>
-              <p></p>
-            </div>
-            <div class="card-price">
-              <p>R$10</p>
-            </div>
-            <div class="card-date">
-              <p>10 a 14 de Agosto</p>
-            </div>
-
-          <a class="card-link" href="#" ></a>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
