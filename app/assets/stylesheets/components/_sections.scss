@@ -1,10 +1,10 @@
 .section-small {
-  background-color: $light-gray;
+  background-color: white;
 }
 
 
 .section-medium {
-  background-color: white;
+  background-color: $bege;
 }
 
 .section-medium h3 {
@@ -28,4 +28,21 @@
 
 body {
 background-color: white;
+}
+
+.section-donafit{
+  // background-color: white;
+  background-color: $bege;
+}
+
+.section-donafit h3 {
+  font-size: $header-small-size;
+  font-weight: 200;
+
+}
+
+.section-donafit p {
+  font-size: $font-medium-size;
+  font-weight: 200;
+
 }

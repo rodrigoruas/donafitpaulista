@@ -7,10 +7,13 @@
   border-color: $light-gray;
   border-width: 5px;
   text-align: center;
+  min-height: 350px;
   max-height: 500px;
 }
 
-
+.card-btn {
+  color: white;
+}
 .card:hover {
     border-color: $light-green;
   }
@@ -33,9 +36,16 @@
   font-size: $header-small-size;
 }
 
-.card-description p {
-  font-weight: 200;
+
+
+.card-description {
+    height: 80px;
+    p {
+    font-weight: 200;
+  }
 }
+
+
 
 .card-price p {
   font-weight: 800;

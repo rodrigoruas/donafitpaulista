@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-7">
+  <div class="col-md-6">
     <div class="menu-body">
       <% @meals.each do |meal| %>
         <div class="menu-item">
@@ -19,14 +19,13 @@
       <% end %>
     </div>
   </div>
-  <div class="col-md-5">
+  <div class="col-md-6">
     <ul class="list-group">
       <p>Carrinho de Compras</p>
       <%= simple_form_for [@cart] do |f| %>
         <% @orders.each do |order| %>
           <li class="list-group-item shop-cart">
-            <p><%= order.meal.name  %></p>
-            <p><%= order.quantity %></p>
+            <p><%="#{order.quantity}  x #{order.meal.name }"  %></p>
             <p><%= order.quantity * order.meal.price %></p>
             <%= f.input :order_ids, as: :hidden, input_html: { value: "#{order.id}"} %>
           </li>

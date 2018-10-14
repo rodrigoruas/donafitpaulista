@@ -1,0 +1,21 @@
+<div class="banner-contact_us">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h2>Faça Seu Pedido Agora</h2>
+        <h3 style="font-weight: 600;"> <%= icon('fab', 'whatsapp') %> 11 99762-1520</h3>
+        <% if user_signed_in? == false %>
+            <%= link_to "Peça Online", new_user_session_path, class: "btn btn-primary  btn-xlarge card-btn" %>
+         <% else %>
+            <%= link_to "Peça Online", meals_path, class: "btn btn-primary  btn-xlarge card-btn" %>
+        <% end %>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <h2>Entregas: Zona Sul e Zona Oeste</h2>
+        <h3>Taxa de Entrega: R$ 10,00</h3>
+
+      </div>
+    </div>
+  </div>
+
+</div>
