@@ -1,11 +1,26 @@
-<div class="container">
+<div class="container margin-top-big">
   <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <% @cart.orders.each do |order| %>
-        <p><%= order.meal.name %></p>
-        <p><%= order.meal.description %></p>
-        <p>R$ <%= order.meal.price %></p>
-      <% end %>
+    <div class="col-xs-12">
+      <h3>Seu Carrinho de Compras</h3>
+      <ul class="list-group">
+        <% @cart.orders.each do |order| %>
+            <div class="row">
+          <li class="list-group-item shop-cart">
+              <div class="col-xs-4">
+                <p><%= order.meal.name %></p>
+              </div>
+              <div class="col-xs-5">
+                <p><%= order.meal.description %></p>
+              </div>
+              <div class="col-xs-3">
+                <p>R$ <%= order.meal.price %> <%= link_to "Editar", edit_order_path(order), class: "btn btn-primary" %></p>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      </ul>
+      <div id="map" style="width:100%; height:300px">
+      </div>
     </div>
   </div>
 </div>

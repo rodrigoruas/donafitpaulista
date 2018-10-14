@@ -13,7 +13,7 @@
             <%= meal.description  %>
           </div>
           <div class="menu-item-btn">
-            <%= link_to "Peça Aqui", new_meal_order_path(meal), class: "btn btn-primary" %>
+            <%= link_to "Adicionar ao Carrinho", new_meal_order_path(meal), class: "btn btn-primary" %>
           </div>
         </div>
       <% end %>
@@ -26,7 +26,7 @@
         <% @orders.each do |order| %>
           <li class="list-group-item shop-cart">
             <p><%="#{order.quantity}  x #{order.meal.name }"  %></p>
-            <p><%= order.quantity * order.meal.price %></p>
+            <p><%= humanized_money_with_symbol(order.quantity * order.meal.price) %></p>
             <%= f.input :order_ids, as: :hidden, input_html: { value: "#{order.id}"} %>
           </li>
         <% end %>
