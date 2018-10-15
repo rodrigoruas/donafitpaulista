@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create]
   end
   resources :orders, only: [:index, :edit, :update, :destroy]
-  resources :carts, only: [:new, :create, :show]
+  resources :carts, only: [:new, :create, :show, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
